@@ -1,1 +1,1 @@
-export { add } from './utils.js';
+export { default as DePay } from './entities/DePay.js';
