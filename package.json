@@ -1,33 +1,40 @@
 {
-  "name": "@de-pay/core",
-  "version": "0.0.0",
-  "description": "Core library for Depay",
-  "keywords": [
-    "nitro",
-    "nitro-sdk",
-    "depay",
-    "de-pay"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "ci": "npm run build",
-    "format": "prettier --write ."
-  },
-  "homepage": "https://github.com/router-protocol/de-pay-core",
-  "bugs": {
-    "url": "https://github.com/router-protocol/de-pay-core/issues"
-  },
-  "author": "Joydeep Singha <joydeep@routerprotocol.com> (https://routerprotocol.com)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/router-protocol/de-pay-core.git"
-  },
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "devDependencies": {
-    "prettier": "^3.3.3",
-    "typescript": "^5.6.2"
-  }
+    "name": "@de-pay/core",
+    "main": "dist/index.js",
+    "version": "0.0.0",
+    "description": "Core library for Depay",
+    "keywords": [
+        "nitro",
+        "nitro-sdk",
+        "depay",
+        "de-pay"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint && npm run test",
+        "format": "prettier --write .",
+        "check-format": "prettier --check .",
+        "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+        "test": "vitest run",
+        "dev": "vitest"
+    },
+    "homepage": "https://github.com/router-protocol/de-pay-core",
+    "bugs": {
+        "url": "https://github.com/router-protocol/de-pay-core/issues"
+    },
+    "author": "Joydeep Singha <joydeep@routerprotocol.com> (https://routerprotocol.com)",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/router-protocol/de-pay-core.git"
+    },
+    "files": [
+        "dist"
+    ],
+    "type": "module",
+    "devDependencies": {
+        "@arethetypeswrong/cli": "^0.16.2",
+        "prettier": "^3.3.3",
+        "typescript": "^5.6.2",
+        "vitest": "^2.0.5"
+    }
 }
