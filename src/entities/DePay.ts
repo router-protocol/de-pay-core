@@ -114,7 +114,7 @@ export default class DePay {
       }
       const transactionData = (await res.json()) as DeTransaction;
       if (!transactionData) {
-        throw new Error('Failed to fetch quote');
+        throw new Error('Failed to create transaction');
       }
       return transactionData;
     } catch (error) {
